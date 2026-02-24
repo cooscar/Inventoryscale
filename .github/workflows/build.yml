@@ -1,4 +1,4 @@
-name: Build All Versions
+name: Build
 
 on:
   push:
@@ -81,3 +81,9 @@ jobs:
           name: inventoryscale-mc${{ matrix.mc }}
           path: artifacts/*.jar
           retention-days: 90
+
+      - name: Upload to GitHub Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/inventoryscale-mc${{ matrix.mc }}.jar
