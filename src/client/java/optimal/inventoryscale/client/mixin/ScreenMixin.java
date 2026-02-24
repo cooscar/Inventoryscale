@@ -9,10 +9,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * Overrides Screen.width/height after they are set so widgets lay out
- * at the scaled virtual resolution instead of the real window resolution.
- */
 @Mixin(Screen.class)
 public abstract class ScreenMixin {
 

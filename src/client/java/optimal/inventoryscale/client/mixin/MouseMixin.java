@@ -6,10 +6,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-/**
- * Adjusts the scaled width/height used by Mouse to convert raw cursor
- * positions into GUI coordinates, so clicks land correctly on scaled screens.
- */
 @Mixin(Mouse.class)
 public abstract class MouseMixin {
 

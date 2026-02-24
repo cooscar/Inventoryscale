@@ -22,6 +22,5 @@ public abstract class DrawContextMixin {
     private void preTooltip(TextRenderer tr, List<Text> lines,
                              Optional<TooltipData> data, int x, int y,
                              CallbackInfo ci) {
-        // tooltip scaling stubbed out - matrix API differs across MC versions
     }
 }

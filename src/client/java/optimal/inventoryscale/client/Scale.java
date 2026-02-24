@@ -3,12 +3,8 @@ package optimal.inventoryscale.client;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 
-/**
- * Returns the correct scale factor based on which screen is currently open.
- */
 public class Scale {
 
-    /** GUI scale to apply this frame. Returns 1.0 if nothing is open. */
     public static float getGuiScale() {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.currentScreen == null) return 1.0f;

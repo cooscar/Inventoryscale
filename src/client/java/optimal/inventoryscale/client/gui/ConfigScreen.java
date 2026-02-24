@@ -73,10 +73,8 @@ public class ConfigScreen extends Screen {
         int py = (height - PANEL_H) / 2;
         int sx = px + (PANEL_W - SLIDER_W) / 2;
 
-        // Panel background
         ctx.fill(px, py, px + PANEL_W, py + PANEL_H, 0xCC101010);
 
-        // Manual border (top, bottom, left, right)
         ctx.fill(px, py, px + PANEL_W, py + 1, 0xFF444466);
         ctx.fill(px, py + PANEL_H - 1, px + PANEL_W, py + PANEL_H, 0xFF444466);
         ctx.fill(px, py, px + 1, py + PANEL_H, 0xFF444466);

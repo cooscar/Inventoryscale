@@ -12,9 +12,6 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * Simple JSON-backed config. No external lib needed - uses Gson bundled with MC.
- */
 public class ModConfig {
 
     private static final Logger LOGGER = LoggerFactory.getLogger("inventoryscale");
@@ -22,20 +19,14 @@ public class ModConfig {
     private static final Path CONFIG_PATH = FabricLoader.getInstance()
             .getConfigDir().resolve("inventoryscale.json");
 
-    // ---- Fields (saved to disk) ----
-    /** Scale for the player's own inventory screen. Range: 0.5 – 3.0 */
     public float inventoryScale = 1.0f;
-    /** Scale for container screens (chest, furnace, etc.). Range: 0.5 – 3.0 */
     public float containerScale = 1.0f;
-    /** Scale for item tooltips. Range: 0.5 – 3.0 */
     public float tooltipScale   = 1.0f;
 
-    // ---- Singleton ----
     private static ModConfig INSTANCE = new ModConfig();
 
     public static ModConfig get() { return INSTANCE; }
 
-    // ---- I/O ----
     public static void load() {
         if (Files.exists(CONFIG_PATH)) {
             try (Reader reader = Files.newBufferedReader(CONFIG_PATH)) {
@@ -48,7 +39,7 @@ public class ModConfig {
                 LOGGER.warn("Failed to load InventoryScale config, using defaults", e);
             }
         } else {
-            save(); // write defaults on first run
+            save();
         }
     }
 
