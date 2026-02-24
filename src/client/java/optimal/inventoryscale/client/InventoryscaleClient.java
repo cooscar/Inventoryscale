@@ -19,18 +19,15 @@ public class InventoryscaleClient implements ClientModInitializer {
     public void onInitializeClient() {
         LOGGER.info("InventoryScale loading...");
 
-        // Load config from disk
         ModConfig.load();
 
-        // Register keybind: press I (anywhere) to open config GUI
         configKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.inventoryscale.openConfig",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_I,
-                "category.inventoryscale"
+                "key.categories.misc"
         ));
 
-        // Open the config screen when key is pressed
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (configKey.wasPressed() && client.player != null) {
                 client.setScreen(new ConfigScreen(client.currentScreen));
