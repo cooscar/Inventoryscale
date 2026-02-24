@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "inventoryscale",
+  "version": "${version}",
+  "name": "Inventoryscale",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/inventoryscale/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "optimal.inventoryscale.client.InventoryscaleDataGenerator"
+    ],
+    "client": [
+      "optimal.inventoryscale.client.InventoryscaleClient"
+    ],
+    "main": [
+      "optimal.inventoryscale.Inventoryscale"
+    ]
+  },
+  "mixins": [
+    "inventoryscale.mixins.json",
+    {
+      "config": "inventoryscale.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
