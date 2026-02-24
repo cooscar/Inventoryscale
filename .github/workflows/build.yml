@@ -73,6 +73,12 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Download Gradle wrapper jar
+        run: |
+          mkdir -p gradle/wrapper
+          curl -L -o gradle/wrapper/gradle-wrapper.jar \
+            https://github.com/gradle/gradle/raw/v9.2.1/gradle/wrapper/gradle-wrapper.jar
+
       - name: Cache Gradle & Loom
         uses: actions/cache@v4
         with:
